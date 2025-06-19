@@ -1,0 +1,222 @@
+{
+    "OP1618627": [
+        {
+            "articulo": "01-03-897",
+            "descripcion": "Wire Harness Driver Push in LED",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "01-14-942",
+            "descripcion": "WIRE Rigid 22 AWG SI OD",
+            "color": "",
+            "cantidad": 210
+        },
+        {
+            "articulo": "03-35-434",
+            "descripcion": "MW GND Sl 0.75mm² STD",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "03-35-467",
+            "descripcion": "MH SEN Sl 0.5mm² STD",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "03-35-579",
+            "descripcion": "MH PWR DI 0.75mm² RGD",
+            "color": "",
+            "cantidad": 210
+        },
+        {
+            "articulo": "03-35-581",
+            "descripcion": "MH PWR DI 0.75mm² RGD",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "03-35-626",
+            "descripcion": "USW9-SerRing M4 GNYE-170",
+            "color": "",
+            "cantidad": 210
+        },
+        {
+            "articulo": "03-35-630",
+            "descripcion": "USW9-SerRing M4 GNYE-110",
+            "color": "",
+            "cantidad": 210
+        },
+        {
+            "articulo": "03-45-504",
+            "descripcion": "MW GND Sl 0.75mm² STD",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "03-65-706",
+            "descripcion": "DRIVER_SIGNIFY_SR_75W_2",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "00-05-297",
+            "descripcion": "SCR Pan Head Hexdob ISO",
+            "color": "",
+            "cantidad": 315
+        },
+        {
+            "articulo": "00-05-604",
+            "descripcion": "WASH Serr Lock Ext Teeth",
+            "color": "",
+            "cantidad": 315
+        },
+        {
+            "articulo": "00-58-442",
+            "descripcion": "Label Mains Input CL-I NoDim",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "03-58-485",
+            "descripcion": "ASSY P1581 BODY Painted",
+            "color": "RAL7035B",
+            "cantidad": 105
+        },
+        {
+            "articulo": "00-05-285",
+            "descripcion": "SCR Pan Head Hexdob DIN",
+            "color": "",
+            "cantidad": 410
+        },
+        {
+            "articulo": "00-06-108",
+            "descripcion": "SCR Pan Head Hexdob DIN",
+            "color": "",
+            "cantidad": 315
+        },
+        {
+            "articulo": "00-57-799",
+            "descripcion": "WTW WAGO_862_Catch",
+            "color": "",
+            "cantidad": 105
+        },
+        {
+            "articulo": "03-51-873",
+            "descripcion": "Gear tray for mini harness",
+            "color": "",
+            "cantidad": 105
+        }
+    ],
+    "OP1645987": [
+        {
+            "articulo": "01-03-897",
+            "descripcion": "Wire Harness Driver Push in LED",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "01-14-942",
+            "descripcion": "WIRE Rigid 22 AWG SI OD",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "03-35-434",
+            "descripcion": "MW GND Sl 0.75mm² STD",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "03-35-467",
+            "descripcion": "MH SEN Sl 0.5mm² STD",
+            "color": "",
+            "cantidad": 196
+        },
+        {
+            "articulo": "03-35-579",
+            "descripcion": "MH PWR DI 0.75mm² RGD",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "03-35-581",
+            "descripcion": "MH PWR DI 0.75mm² RGD",
+            "color": "",
+            "cantidad": 196
+        },
+        {
+            "articulo": "03-35-626",
+            "descripcion": "USW9-SerRing M4 GNYE-170",
+            "color": "",
+            "cantidad": 196
+        },
+        {
+            "articulo": "03-35-630",
+            "descripcion": "USW9-SerRing M4 GNYE-110",
+            "color": "",
+            "cantidad": 196
+        },
+        {
+            "articulo": "03-45-504",
+            "descripcion": "MW GND Sl 0.75mm² STD",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "03-65-706",
+            "descripcion": "DRIVER_SIGNIFY_SR_75W_2",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "00-05-297",
+            "descripcion": "SCR Pan Head Hexdob ISO",
+            "color": "",
+            "cantidad": 320
+        },
+        {
+            "articulo": "00-05-604",
+            "descripcion": "WASH Serr Lock Ext Teeth",
+            "color": "",
+            "cantidad": 258
+        },
+        {
+            "articulo": "00-58-442",
+            "descripcion": "Label Mains Input CL-I NoDim",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "03-58-485",
+            "descripcion": "BODY Painted",
+            "color": "AKZO900GS",
+            "cantidad": 98
+        },
+        {
+            "articulo": "00-05-285",
+            "descripcion": "SCR Pan Head Hexdob DIN",
+            "color": "",
+            "cantidad": 510
+        },
+        {
+            "articulo": "00-06-108",
+            "descripcion": "SCR Pan Head Hexdob DIN",
+            "color": "",
+            "cantidad": 420
+        },
+        {
+            "articulo": "00-57-799",
+            "descripcion": "WTW WAGO_862_Catch",
+            "color": "",
+            "cantidad": 98
+        },
+        {
+            "articulo": "03-51-873",
+            "descripcion": "Gear tray for mini harness",
+            "color": "",
+            "cantidad": 98
+        }
+    ]
+}
