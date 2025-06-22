@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('ordenes.json', '.'), ('stock.csv', '.'), ('templates', 'templates')],
+    datas=[('templates', 'templates'), ('ordenes.json', '.'), ('stock.csv', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

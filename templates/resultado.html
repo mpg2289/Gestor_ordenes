@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cosmo/bootstrap.min.css" integrity="sha384-5QFXyVb+lrCzdN228VS3HmzpiE7ZVwLQtkt+0d9W43LQMzz4HBnnqvVxKg6O+04d" crossorigin="anonymous">
+    <!--Nuestros estilos-->
+    <!---<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">--->
+    <script src="https://unpkg.com/tablesort@5.2.1/dist/tablesort.min.js"></script>
+
+    <title>Lista de materiales</title>
+</head>
+<body>
+    <main class="container p-4">
+        
+        <table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Articulo</th>
+            <th>Descripción</th>
+            <th>Color</th>
+            <th>Requerido</th>
+            <th>Disponible</th>
+            <th>Ubicacion stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in ordenes %}
+        <tr class="
+        <!-- colores de la tabla -->
+            {% if item.estado == 'ok' %}table-success
+            {% elif item.estado == 'falta' %}table-danger
+            {% else %}table-warning{% endif %}">
+
+                <td>{{ item.articulo }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.color }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.disponible }}</td>
+                <td>{{ item.ubicacion_stock }}
+                    {% for u in item.ubicaciones %}
+                        
+                        <small>Ubicacion: {{ u.ubicacion }} Disponible: {{ u.disponible }}</small><br>
+                    {% endfor %}
+                    {% if item.alerta %}<span class="text-danger">🚨Atención!</span>
+                    {% endif %}
+                </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<form action="/" method="get">
+                <button type="submit" class="btn btn-primary mt-2">Volver</button>
+            </form>
+    </main>
+
+</body>
+</html>
