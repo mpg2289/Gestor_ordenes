@@ -12,52 +12,58 @@ def index():
     return render_template("index.html", ordenes=ordenes)
 
 #Pagina de resultados
-@app.route("/consultar", methods=["POST"])
+@app.route("/consultar", methods=["GET", "POST"])
 def consultar_multiple():
-    ordenes_input = request.form["ordenes"]
-    ordenes_ids = [o.strip() for o in ordenes_input.replace("\n", ",").split(",") if o.strip()]
+    if request.method == "POST":
+        ordenes_input = request.form["ordenes"]
+        ordenes_ids = [o.strip() for o in ordenes_input.replace("\n", ",").split(",") if o.strip()]
 
-    datos_ordenes = mostrar_ordenes()
-    stock = cargar_stock()
+        datos_ordenes = mostrar_ordenes()
+        stock = cargar_stock()
 
-    resultados = []
+        resultados = []
 
-    for oid in ordenes_ids:
-        articulos = datos_ordenes.get(oid, [])
-        total_faltan = 0
-        hay_dudosos = False
+        for oid in ordenes_ids:
+            articulos = datos_ordenes.get(oid, [])
+            total_faltan = 0
+            hay_dudosos = False
 
-        for item in articulos:
-            articulo = item["articulo"]
-            ubicaciones = stock.get(articulo, [])
-            total_disponible = sum(u["disponible"] for u in ubicaciones)
-            item["estado"] = "ok" if total_disponible >= item["cantidad"] else "falta"
+            for item in articulos:
+                articulo = item["articulo"]
+                ubicaciones = stock.get(articulo, [])
+                total_disponible = sum(u["disponible"] for u in ubicaciones)
+                item["estado"] = "ok" if total_disponible >= item["cantidad"] else "falta"
 
-            if any(u["ubicacion"] in ["MONTAJE", "T-CHIC", "VERIFICAR"] for u in ubicaciones):
-                hay_dudosos = True
-            if item["estado"] == "falta":
-                total_faltan += 1
+                if any(u["ubicacion"] in ["MONTAJE", "T-CHIC", "VERIFICAR"] for u in ubicaciones):
+                    hay_dudosos = True
+                if item["estado"] == "falta":
+                    total_faltan += 1
 
-        if not articulos:
-            estado_global = "desconocida"
-        elif total_faltan > 0:
-            estado_global = "no_montable"
-        elif hay_dudosos:
-            estado_global = "dudosa"
-        else:
-            estado_global = "montable"
+            if not articulos:
+                estado_global = "desconocida"
+            elif total_faltan > 0:
+                estado_global = "no_montable"
+            elif hay_dudosos:
+                estado_global = "dudosa"
+            else:
+                estado_global = "montable"
 
-        resultados.append({
-            "orden": oid,
-            "estado": estado_global
-        })
+            resultados.append({
+                "orden": oid,
+                "estado": estado_global
+            })
 
-    return render_template("index.html", ordenes=ordenes_ids, resultados=resultados)
+        return render_template("index.html", ordenes=ordenes_ids, resultados=resultados)
+
+    
+
 
 #Pagina de detalle
 @app.route("/detalle", methods=["POST"])
 def consultar_detalle():
     numero_orden = request.form["orden"]
+    ordenes_str = request.form.get("ordenes", "")  # <-- esto puede estar vacío si no se envió
+
     ordenes = mostrar_ordenes()
     stock = cargar_stock()
 
@@ -66,16 +72,15 @@ def consultar_detalle():
     for item in articulos:
         articulo = item["articulo"]
         info_stock = stock.get(articulo, [])
-
         total_disponible = sum(entry["disponible"] for entry in info_stock)
         item["disponible"] = total_disponible
         item["ubicaciones"] = info_stock
-
         ubicaciones_criticas = ["MONTAJE", "T-CHIC", "VERIFICAR"]
         item["alerta"] = any(entry["ubicacion"] in ubicaciones_criticas for entry in info_stock)
         item["estado"] = "ok" if total_disponible >= item["cantidad"] else "falta"
 
-    return render_template("resultado.html", orden=numero_orden, ordenes=articulos)
+    return render_template("resultado.html", orden=numero_orden, ordenes=articulos, ordenes_consultadas=ordenes_str)
+
 
 
 if __name__ == "__main__":

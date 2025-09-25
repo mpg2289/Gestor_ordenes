@@ -32,10 +32,13 @@
     <td>{{ r.orden }}</td>
     <td>{{ r.estado }}</td>
     <td>
-      <form action="/detalle" method="post">
-        <input type="hidden" name="orden" value="{{ r.orden }}">
-        <button type="submit" class="btn btn-info btn-sm">Mostrar</button>
-      </form>
+        
+<form action="{{ url_for('consultar_detalle') }}" method="POST">
+    <input type="hidden" name="orden" value="{{ r.orden }}">
+    <input type="hidden" name="ordenes" value="{{  ordenes|default([])|join(',') }}">
+    <button class="btn btn-outline-info">Mostrar</button>
+</form>
+
     </td>
   </tr>
 {% endfor %}

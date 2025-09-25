@@ -9,6 +9,7 @@
     <!---<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">--->
     <script src="https://unpkg.com/tablesort@5.2.1/dist/tablesort.min.js"></script>
 
+<!--Tabla con la lista de materiales de cada orden-->
     <title>Lista de materiales</title>
 </head>
 <body>
@@ -50,9 +51,13 @@
         {% endfor %}
     </tbody>
 </table>
-<form action="/" method="get">
-                <button type="submit" class="btn btn-primary mt-2">Volver</button>
-            </form>
+<form action="{{ url_for('consultar_multiple') }}" method="POST">
+    <input type="hidden" name="ordenes" value="{{ ordenes_consultadas }}">
+    <button type="submit" class="btn btn-primary mt-2">Volver</button>
+</form>
+
+
+
     </main>
 
 </body>
