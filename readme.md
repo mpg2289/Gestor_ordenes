@@ -51,7 +51,7 @@ Este proyecto ha sido desarrollado de forma **autodidacta** como parte de mi apr
 
 ### 1. Clona el repositorio
 
-git clone https://github.com/tu-usuario/gestor-stock-ordenes.git
+git clone https://github.com/mpg2289/Gestor_ordenes
 cd gestor-stock-ordenes
 
 ### 2. Creacion y activación del entorno virtual
